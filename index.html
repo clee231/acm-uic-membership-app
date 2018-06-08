@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+        }
+        form {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input.invalid {
+            background-color: #ffdddd;
+        }
+        .tab {
+            display: none;
+        }
+        .step {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+        }
+
+        .step.active {
+            opacity: 1;
+        }
+
+        .step.finish {
+            background-color: #ff8888;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="regForm" method="POST" action="">
+        <div data-step="1" class="tab">
+            <fieldset>
+                <legend>Page 1</legend>
+                <label for="membership-type">Membership type</label>
+                <input type="radio" name="membership-type" value="New Member">New Member
+                <input type="radio" name="membership-type" value="Membership Renewal">Membership Renewal
+                <br>
+                <label for="first-name">First Name</label>
+                <input type="text" name="first-name">
+                <br>
+                <label for="last-name">Last Name</label>
+                <input type="text" next="last-name">
+                <br>
+                <label for="preferred-name">Preferred Name</label>
+                <input type="text" name="preferred-name">
+                <br>
+                <label for="text" for="non-uic-email">Non-UIC Email Address</label>
+                <input type="email" name="non-uic-email">
+                <br>
+                <label for="phone-number">Phone Numer</label>
+                <input type="tel" name="phone-number">
+                <br>
+                <label for="uic-netid">UIC NetID</label>
+                <input type="text" name="uic-netid">
+                <br>
+                <label for="uic-uin">UIC UIN</label>
+                <input type="text" name="uic-uin">
+            </fieldset>
+        </div>
+        <div class="tab">
+            <fieldset>
+                <legend>Page 2</legend>
+                <label for="school-year">What year of school are you?</label>
+                <input type="radio" name="school-year" value="Freshman">Freshman
+                <input type="radio" name="school-year" value="Sophmore">Sophmore
+                <input type="radio" name="school-year" value="Junior">Junior
+                <input type="radio" name="school-year" value="Senior">Senior
+                <input type="radio" name="school-year" value="Grad Masters">Grad Masters
+                <input type="radio" name="school-year" value="Grad PHD">Grad PHD
+                <input type="radio" name="school-year" value="Professor">Professor
+                <input type="radio" name="school-year" value="Alumni">Alumni
+                <br>
+                <label for="college">College</label>
+                <input type="text" name="college">
+                <br>
+                <label for="major">Major</label>
+                <input type="text" next="major">
+                <br>
+                <label for="commuter">Commute to Campus?</label>
+                <input type="text" name="commuter">
+                <br>
+                <label for="text" for="acm-resume-book">Would you like to participate in the ACM Resume Book?</label>
+                <input type="radio" name="acm-resume-book" value="Yes">Yes
+                <input type="radio" name="acm-resume-book" value="No">No
+                <br>
+                <label for="internships">How many internships have you had?</label>
+                <input type="radio" name="internships" value="1">1
+                <input type="radio" name="internships" value="2">2
+                <input type="radio" name="internships" value="More">More
+                <br>
+                <label for="credit-hours">How many credit hours are you taking?</label>
+                <select name="credit-hours">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                </select>
+                <br>
+                <label for="languages">What languages do you know?</label>
+                <input type="checkbox" name="languages" value="C">C
+                <input type="checkbox" name="languages" value="C++">C++
+                <input type="checkbox" name="languages" value="C#">C#
+                <input type="checkbox" name="languages" value="Objective C">Objective C
+                <input type="checkbox" name="languages" value="GO Lang">GO Lang
+                <input type="checkbox" name="languages" value="F#">F#
+                <input type="checkbox" name="languages" value="Java">Java
+                <input type="checkbox" name="languages" value="Javascript">Javascript
+                <input type="checkbox" name="languages" value="HTML+CSS">HTML+CSS
+                <input type="checkbox" name="languages" value="Lisp">Lisp
+                <input type="checkbox" name="languages" value="LUA">LUA
+                <input type="checkbox" name="languages" value="PHP">PHP
+                <input type="checkbox" name="languages" value="Python">Python
+                <input type="checkbox" name="languages" value="Ruby">Ruby
+                <input type="checkbox" name="languages" value="Swift">Swift
+                <input type="checkbox" name="languages" value="SQL">SQL
+                <input type="checkbox" name="languages" value="X86/X64/Y86">X86/X64/Y86
+                <input type="checkbox" name="languages" value="MIPS Assembly">MIPS Assembly
+                <input type="checkbox" name="languages" value="Other">Other
+                <input type="text" name="languages-other">
+                <br>
+                <label for="cs-interests">What are your interested in Commputer Science?</label>
+                <input type="checkbox" name="cs-interests" value="Security">Security
+                <input type="checkbox" name="cs-interests" value="Visualization">Visualization
+                <input type="checkbox" name="cs-interests" value="Computer human interation">Computer human interation
+                <input type="checkbox" name="cs-interests" value="Machine Learning">Machine Learning
+                <input type="checkbox" name="cs-interests" value="Education">Education
+                <input type="checkbox" name="cs-interests" value="Mathematics">Mathematics
+                <input type="checkbox" name="cs-interests" value="Scaleable computing">Scaleable computing
+                <input type="checkbox" name="cs-interests" value="Other">Other
+                <input type="text" name="cs-interests-other">
+                <br>
+                <label for="sig-interests">What SIGs are you interested in?</label>
+                <input type="checkbox" name="sig-interests" value="Security">Sys Admin
+                <input type="checkbox" name="sig-interests" value="Visualization">Block Chain
+                <input type="checkbox" name="sig-interests" value="Computer human interation">Algorithmic Trading
+                <input type="checkbox" name="sig-interests" value="Machine Learning">Math coding
+                <input type="checkbox" name="sig-interests" value="Education">Windows
+                <input type="checkbox" name="sig-interests" value="Other">Other
+                <input type="text" name="sig-interests-other">
+                <br>
+                <label for="acm-hosted-event">What SIGs are you interested in?</label>
+                <input type="checkbox" name="acm-hosted-event" value="Flourish! (An open source conference run by LUG and ACM student orgs)">Flourish! (An open source conference run by LUG and ACM student orgs)
+                <input type="checkbox" name="acm-hosted-event" value="A hackathon">A hackathon
+                <input type="checkbox" name="acm-hosted-event" value="I would not be interested in helping to attenting this type of event">I would not be interested in helping to attenting this type of event
+                <input type="checkbox" name="acm-hosted-event" value="IT D3bug Challenges">IT D3bug Challenges
+                <input type="checkbox" name="acm-hosted-event" value="Programming Challenges">Programming Challenges
+                <input type="checkbox" name="acm-hosted-event" value="Other">Other
+                <input type="text" name="acm-hosted-event-other">
+                <br>
+                <label for="competing-interests">I would be interested is competing in</label>
+                <input type="checkbox" name="competing-interests" value="No, I don't want to compete in anything">No, I don't want to compete in anything
+                <input type="checkbox" name="competing-interests" value="Hack Illinois">Hack Illinois
+                <input type="checkbox" name="competing-interests" value="ICPC programming competition">ICPC programming competition
+                <input type="checkbox" name="competing-interests" value="Google Games">Google Games
+                <input type="checkbox" name="competing-interests" value="Loyola Datafest">Loyola Datafest
+                <input type="checkbox" name="competing-interests" value="DOE Cyber Security Competition">DOE Cyber Security Competition
+                <input type="text" name="competing-interests-other">
+            </fieldset>
+        </div>
+        <div class="tab">
+            <fieldset>
+                <legend>Page 3</legend>
+                <p>We have a slack! What's that? It's a online group of ACM's chat rooms (Similar to IRC or Group messages).
+                    People can usually answer your ACM related questions. Users on ACM's Slack frequently use it for casual/semi-professional
+                    discussion about cool CS factoids, breaking news, SIG and group information, general discussion, and
+                    conversing with fellow ACM friends. If you have your UIC email you can sign up at uicacm.slack.com (Don't
+                    worry you'll get this information again at the end)</p>
+                <label for="slack">I read the paragraph</label>
+                <input type="radio" name="slack" value="Yep totally read that">Yep totally read that
+            </fieldset>
+        </div>
+        <div class="tab">
+            <fieldset>
+                <legend>Page 4</legend>
+                <p>You can sign up for National membership or just UIC membership. UIC memberships last till the end of that
+                    school year and cost $10. A receipt will be issued to you once you pay the membership dues. Please KEEP
+                    your receipt; this is the proof you have paid your dues for the school year and is to complete this form.
+                    National memberships are 1 year from the date of signing up. The ACM@UIC honors national memberships
+                    at no additional charge to national members. You can sign up for an ACM national student membership for
+                    $19.00 at
+                    <a href="https://campus2.acm.org/public/qj/quickjoin/qj_control.cfm?promo=PWEBTOP&form_type=Student">https://campus2.acm.org/public/qj/quickjoin/qj_control.cfm?promo=PWEBTOP&form_type=Student</a> . You
+                    will receive an email with a member ID which you should provide below.</p>
+                <label for="receipt">If you paid with cash, Please enter you Receipt number in the box below. If you are a National member, enter
+                    your National ACM membership ID below.</label>
+                <input type="text" name="receipt">
+            </fieldset>
+        </div>
+        <div class="tab">
+            <fieldset>
+                <legend>Page 5</legend>
+                <p>As an local ACM@UIC member you get access to our machines, servers, and other web services. Many resources
+                    require login credentials to use. Once your application has been processed, you will receive an email
+                    at your Non-UIC email address with further instructions to setup your local ACM@UIC chapter account.</p>
+                <label for="account-name">Desired account name</label>
+                <input type="text" name="account-name">
+            </fieldset>
+        </div>
+        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </form>
+
+    <script>
+        let currentTab = 0;
+        updateProgressBar(currentTab);
+        showTab(currentTab);
+
+        function showTab(currentTab) {
+            let tabs = document.querySelectorAll(".tab");
+            tabs[currentTab].style.display = "block";
+            if (currentTab == 0) document.querySelector("#prevBtn").style.display = "none";
+            else document.querySelector("#prevBtn").style.display = "inline";
+            if (currentTab == tabs.length - 1) document.querySelector("#nextBtn").innerHTML = "Submit";
+            else document.querySelector("#nextBtn").innerHTML = "Next";
+            updateProgressBar(currentTab);
+        }
+        function updateProgressBar(currentTab) {
+            let steps = document.querySelectorAll(".step");
+            for (let i = 0; i < steps.length; i++) {
+                steps[i].  className = steps[i].className.replace(" active", "");
+            }
+            steps[currentTab].className += " active";
+        }
+        function nextPrev(gotoTab) {
+          let x = document.querySelectorAll(".tab");
+          if (gotoTab == 1 && !validateForm()) return false;
+          x[currentTab].style.display = "none";
+          currentTab = currentTab + gotoTab;
+          if (currentTab >= x.length) {
+            document.querySelector("#regForm").submit();
+            return false;
+          }
+          showTab(currentTab);
+        }
+
+        function validateForm() {
+            let valid = true;
+            let x = document.querySelectorAll(".tab");
+            let y = x[currentTab].querySelectorAll("input");
+            // A loop that checks every input field in the current tab:
+            for (let i = 0; i < y.length; i++) {
+                if (y[i].value == "") {
+                    y[i].className += " invalid";
+                    valid = false;
+                }
+            }
+            if (valid) {
+                document.querySelectorAll(".step")[currentTab].className += " finish";
+            }
+            return valid;
+        }
+    </script>
+</body>
+</html>
